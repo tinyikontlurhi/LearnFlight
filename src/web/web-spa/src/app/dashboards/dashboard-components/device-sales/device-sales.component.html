@@ -1,0 +1,72 @@
+<!-- ============================================================== -->
+<!-- Conversion - Growth - Sales -->
+<!-- ============================================================== -->
+<div class="row m-t-30">
+    <!-- col -->
+    <div class="col-sm-12 col-lg-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Conversion Rate</h4>
+                <div id="visitor" class="m-t-20"></div>
+                <ul class="list-inline text-center">
+                    <li class="list-inline-item">
+                        <i class="fa fa-circle text-info"></i> Potatoes</li>
+                    <li class="list-inline-item">
+                        <i class="fa fa-circle text-cyan"></i> Carrots</li>
+                    <li class="list-inline-item">
+                        <i class="fa fa-circle text-orange"></i> Cabbage</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- col -->
+    <div class="col-sm-12 col-lg-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Yield Graph</h4>
+                <div class="barchrt m-t-30">
+                    <x-chartist class="net-income" [data]="barChart.data" [type]="barChart.type" [options]="barChart.options" [responsiveOptions]="barChart.responsiveOptions"
+                        [events]="barChart.events"> </x-chartist>
+                </div>
+                <ul class="list-inline text-center">
+                    <li class="list-inline-item">
+                        <i class="fa fa-circle text-info"></i>Growth Rate</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- col -->
+    <div class="col-sm-12 col-lg-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Ec Levels</h4>
+                <div class="row">
+                    <div class="col-6 m-t-40">
+                        <h2 class="m-b-5">SME: 4.00</h2>
+                        <span>mS/cm 1:2</span>
+                        <br>
+                        <span>mS/cm 1:5</span>
+                    </div>
+                    <div class="col-6">
+                        <div id="sales" class="ml-auto">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">pH Levels</h4>
+                <div class="row">
+                    <div class="col-6 m-t-40">
+                        <h2 class="m-b-5">$3528</h2>
+                        <span>(150-165 sales)</span>
+                    </div>
+                    <div class="col-6">
+                        <div id="foo"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,259 @@
+<!-- ============================================================== -->
+<!-- toggle and nav items -->
+<!-- ============================================================== -->
+<ul class="navbar-nav float-left mr-auto">
+    <li class="nav-item d-none d-md-block">
+        <a (click)="toggleSidebar.emit()" class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)">
+            <i class="mdi mdi-menu font-24"></i>
+        </a>
+    </li>
+    <!-- ============================================================== -->
+    <!-- mega menu -->
+    <!-- ============================================================== -->
+    <li class="nav-item mega-dropdown" ngbDropdown [autoClose]="false">
+        <a ngbDropdownToggle class="nav-link waves-effect waves-dark" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <span class="d-none d-md-block">Menu
+                <i class="fa fa-angle-down"></i>
+            </span>
+            <span class="d-block d-md-none">
+                <i class="mdi mdi-dialpad font-24"></i>
+            </span>
+        </a>
+        <div class="dropdown-menu" ngbDropdownMenu>
+            <div class="mega-dropdown-menu row">
+                <div class="col-lg-3 col-xlg-2 m-b-30">
+                    <h4 class="m-b-20">Devices</h4>
+                    <!-- CAROUSEL -->
+                    <ngb-carousel>
+                        <ng-template ngbSlide>
+                            <img src="assets/images/big/img1.jpg" class="img-fluid" alt="Random first slide">
+                        </ng-template>
+                        <ng-template ngbSlide>
+                            <img src="assets/images/big/img2.jpg" class="img-fluid" alt="Random second slide">
+                        </ng-template>
+                        <ng-template ngbSlide>
+                            <img src="assets/images/big/img3.jpg" class="img-fluid" alt="Random third slide">
+                        </ng-template>
+                    </ngb-carousel>
+                    <!-- End CAROUSEL -->
+                </div>
+                <div class="col-lg-3 m-b-30">
+                    <h4 class="m-b-20">Farms</h4>
+                    <!-- Accordian -->
+                    <ngb-accordion [closeOthers]="true" activeIds="static-1" class="accordion nav-accordion">
+                        <ngb-panel id="static-1" title="Ndlovukazi Farm">
+                            <ng-template ngbPanelContent>
+                                Farm Status: Excellent
+                            </ng-template>
+                        </ngb-panel>
+                        <ngb-panel id="static-2" title="Lesetla's Farm">
+                            <ng-template ngbPanelContent>
+                                Farm Status: Bad
+                            </ng-template>
+                        </ngb-panel>
+                       
+                        <ngb-panel id="static-3" title="Khoza's Farm">
+                            <ng-template ngbPanelContent>
+                                Farm Status: Good
+                            </ng-template>
+                        </ngb-panel>
+                       
+                    </ngb-accordion>
+                </div>
+                <div class="col-lg-3  m-b-30">
+                    <h4 class="m-b-20">CONTACT US</h4>
+                    <!-- Contact -->
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="exampleInputname1" placeholder="Enter Name"> </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Enter email"> </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-info">Submit</button>
+                    </form>
+                </div>
+                <div class="col-lg-3 col-xlg-4 m-b-30">
+                    <h4 class="m-b-20">Recently Visited Pages</h4>
+                    <!-- List style -->
+                    <ul class="list-style-none">
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="fa fa-check text-success"></i>Crops</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="fa fa-check text-success"></i>Maps</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="fa fa-check text-success"></i>Tasks</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="fa fa-check text-success"></i>Devices</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="fa fa-check text-success"></i>Analytics</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </li>
+    <!-- ============================================================== -->
+    <!-- End mega menu -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Search -->
+    <!-- ============================================================== -->
+    <li class="nav-item search-box">
+        <a (click)="showSearch = !showSearch" class="nav-link waves-effect waves-dark" href="javascript:void(0)">
+            <i class="ti-search"></i>
+        </a>
+        <form class="app-search position-absolute" [ngClass]="{'show-search': showSearch}">
+            <input type="text" class="form-control" placeholder="Search &amp; enter">
+            <a class="srh-btn" (click)="showSearch = !showSearch">
+                <i class="ti-close"></i>
+            </a>
+        </form>
+    </li>
+</ul>
+<!-- ============================================================== -->
+<!-- Right side toggle and nav items -->
+<!-- ============================================================== -->
+<ul class="navbar-nav float-right">
+    <!-- ============================================================== -->
+    <!-- create new -->
+    <!-- ============================================================== -->
+    <li class="nav-item dropdown" ngbDropdown placement="bottom-right">
+        <a ngbDropdownToggle class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown"
+            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ province }} <i class="container fas fa-caret-down"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" ngbDropdownMenu>
+            <span class="dropdown-item" href="#" *ngFor="let province of provinces" (click)="changeProvince(province)">
+                <span>{{province.province}}
+                    <span *ngIf="province.type">({{province.type}})</span>
+                </span>
+
+            </span>
+
+
+            <!-- <i class="flag-icon flag-icon-us"></i> English</a>
+            <a class="dropdown-item" href="#">
+                <i class="flag-icon flag-icon-fr"></i> French</a>
+            <a class="dropdown-item" href="#">
+                <i class="flag-icon flag-icon-es"></i> Spanish</a>
+            <a class="dropdown-item" href="#">
+                <i class="flag-icon flag-icon-de"></i> German</a> -->
+        </div>
+    </li>
+    <!-- ============================================================== -->
+    <!-- Comment -->
+    <!-- ============================================================== -->
+    <li class="nav-item dropdown" ngbDropdown placement="bottom-right">
+        <a ngbDropdownToggle class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown"
+            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{selectedDistrict}}<i class="container fas fa-caret-down"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" ngbDropdownMenu>
+            <span class="dropdown-item" href="#" *ngFor="let district of districts" (click)="changeDistrict(district)">
+                <span>{{district}}
+                </span>
+
+            </span>
+
+
+            <!-- <i class="flag-icon flag-icon-us"></i> English</a>
+            <a class="dropdown-item" href="#">
+                <i class="flag-icon flag-icon-fr"></i> French</a>
+            <a class="dropdown-item" href="#">
+                <i class="flag-icon flag-icon-es"></i> Spanish</a>
+            <a class="dropdown-item" href="#">
+                <i class="flag-icon flag-icon-de"></i> German</a> -->
+        </div>
+    </li>
+    <!-- ============================================================== -->
+    <!-- End Comment -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Messages -->
+    <!-- ============================================================== -->
+    <li class="nav-item dropdown" ngbDropdown placement="bottom-right">
+        <a ngbDropdownToggle class="nav-link dropdown-toggle waves-effect waves-dark" href="javascript:void(0)" id="2"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Support <i class="container fas fa-caret-down"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right mailbox" aria-labelledby="2" ngbDropdownMenu>
+            <span class="with-arrow">
+                <span class="bg-danger"></span>
+            </span>
+            <ul class="list-style-none">
+                <li>
+                    <div class="drop-title text-white bg-danger">
+                        <span class="font-light">Help</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="message-center message-body" [perfectScrollbar]="config">
+                        <!-- Message -->
+                        <a href="javascript:void(0)" class="message-item" *ngFor="let helper of help">
+                            {{helper.name}}
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <a class="nav-link text-center link" href="javascript:void(0);">
+                        <b>See all documentation</b>
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </li>
+    <!-- ============================================================== -->
+    <!-- End Messages -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- User profile and search -->
+    <!-- ============================================================== -->
+    <li class="nav-item" ngbDropdown placement="bottom-right">
+        <a ngbDropdownToggle class="nav-link text-muted waves-effect waves-dark pro-pic" href="javascript:void(0)"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31">
+        </a>
+        <div class="dropdown-menu-right user-dd" ngbDropdownMenu>
+            <span class="with-arrow">
+                <span class="bg-primary"></span>
+            </span>
+            <div class="d-flex no-block align-items-center p-15 bg-primary text-white m-b-10">
+                <div class="">
+                    <img src="assets/images/users/1.jpg" alt="user" class="img-circle" width="60">
+                </div>
+                <div class="m-l-10">
+                    <h4 class="m-b-0">{{ organizationName }}</h4>
+                    <p class=" m-b-0">{{email}}</p>
+                </div>
+            </div>
+            <a class="dropdown-item" href="javascript:void(0)">
+                <i class="ti-user m-r-5 m-l-5"></i> Organization Account</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="javascript:void(0)">
+                <i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" (click)="logout()">
+                <i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
+            <div class="dropdown-divider"></div>
+            <div class="p-l-30 p-10">
+                <a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">View Account</a>
+            </div>
+        </div>
+    </li>
+    <!-- ============================================================== -->
+    <!-- User profile and search -->
+    <!-- ============================================================== -->
+</ul>
