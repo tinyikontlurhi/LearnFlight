@@ -11,6 +11,7 @@ export class Login2Component implements OnInit {
   loginform: any;
   recoverform = false;
   isLogin = false;
+  isProgress = false;
 
   constructor(
     private router: Router,
@@ -29,10 +30,14 @@ export class Login2Component implements OnInit {
    }
 
   onSubmit() {
+    this.isProgress = true;
+
     this.authenticationService.login(this.loginform.value).subscribe(data => {
       this.router.navigate(['/dashboard/portal']);
+      this.isProgress = false;
     }, error => {
       this.isLogin = true;
+      this.isProgress = false;
     })
   }
 

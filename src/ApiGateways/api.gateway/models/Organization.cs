@@ -18,7 +18,6 @@ namespace api.gateway.models
         public byte[] passwordHash { get; set; }
 
         public byte[] passwordSalt { get; set; }
-        
-        public DateTime lastLogin { get; set; }
+    
     }
 }
