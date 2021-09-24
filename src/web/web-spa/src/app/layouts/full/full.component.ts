@@ -1,3 +1,4 @@
+import { SidebarService } from './../../core/services/sidebar.service';
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
@@ -10,7 +11,9 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 export class FullComponent implements OnInit {
   public config: PerfectScrollbarConfigInterface = {};
 
-  constructor(public router: Router) { }
+  constructor(
+    public router: Router,
+    private sidebarService: SidebarService) { }
 
   tabStatus = 'justified';
 
@@ -22,25 +25,17 @@ export class FullComponent implements OnInit {
   public showMobileMenu = false;
   public expandLogo = false;
 
-  options = {
-    theme: 'light', // two possible values: light, dark
-    dir: 'ltr', // two possible values: ltr, rtl
-    layout: 'vertical', // fixed value. shouldn't be changed.
-    sidebartype: 'full', // four possible values: full, iconbar, overlay, mini-sidebar
-    sidebarpos: 'fixed', // two possible values: fixed, absolute
-    headerpos: 'fixed', // two possible values: fixed, absolute
-    boxed: 'full', // two possible values: full, boxed
-    navbarbg: 'skin1', // six possible values: skin(1/2/3/4/5/6)
-    sidebarbg: 'skin6', // six possible values: skin(1/2/3/4/5/6)
-    logobg: 'skin6' // six possible values: skin(1/2/3/4/5/6)
-  };
+  options: any;
 
   Logo() {
     this.expandLogo = !this.expandLogo;
   }
 
   ngOnInit() {
-
+    this.sidebarService.currentSidebarOptions.subscribe(data => {
+      this.options = data;
+    });
+    
     if (this.router.url === '/') {
       this.router.navigate(['/dashboard/classic']);
     }
@@ -98,5 +93,10 @@ export class FullComponent implements OnInit {
 
       default:
     }
+  }
+
+  receiveMessage($event: any) {
+    debugger;
+    this.options.sidebartype = $event;
   }
 }

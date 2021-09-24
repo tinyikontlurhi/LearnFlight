@@ -33,7 +33,7 @@ export class Login2Component implements OnInit {
     this.isProgress = true;
 
     this.authenticationService.login(this.loginform.value).subscribe(data => {
-      this.router.navigate(['/dashboard/portal']);
+      this.router.navigate(['/console']);
       this.isProgress = false;
     }, error => {
       this.isLogin = true;

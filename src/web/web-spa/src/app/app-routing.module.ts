@@ -1,3 +1,4 @@
+import { ManagmentConsoleComponent } from './apps/managment-console/managment-console.component';
 
 import { Routes } from '@angular/router';
 
@@ -9,7 +10,7 @@ export const Approutes: Routes = [
         path: '',
         component: FullComponent,
         children: [
-            { path: '', redirectTo: '/dashboard/portal', pathMatch: 'full' },
+            { path: '', redirectTo: '/console', pathMatch: 'full' },
             {
                 path: 'dashboard',
                 loadChildren: () => import('./dashboards/dashboard.module').then(m => m.DashboardModule)
@@ -48,6 +49,10 @@ export const Approutes: Routes = [
             {
                 path: 'sample-pages',
                 loadChildren: () => import('./sample-pages/sample-pages.module').then(m => m.SamplePagesModule)
+            },
+            {
+                path: 'console',
+                component: ManagmentConsoleComponent
             }
         ]
     },

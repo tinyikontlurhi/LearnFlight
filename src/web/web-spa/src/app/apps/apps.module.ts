@@ -1,3 +1,4 @@
+import { ComponentsModule } from './../component/component.module';
 import { NgModule } from '@angular/core';
 import { CommonModule, DatePipe, DecimalPipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -68,7 +69,8 @@ import { RuleConditionsComponent } from './devices/rule-conditions/rule-conditio
         RouterModule.forChild(AppsRoutes),
         PerfectScrollbarModule,
         Ng2SearchPipeModule,
-        DragDropModule
+        DragDropModule,
+        ComponentsModule
     ],
     declarations: [
         ChatComponent,

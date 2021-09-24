@@ -55,6 +55,25 @@ import { ToastsContainer } from './toast/toast-container';
     ToastsContainer,
     NotifierComponent,
     NgbdDatepickerLanguageComponent
-  ]
+  ],
+  exports: [NgbdpregressbarBasicComponent,
+    NgbdpaginationBasicComponent,
+    NgbdAccordionBasicComponent,
+    NgbdAlertBasicComponent,
+    NgbdCarouselBasicComponent,
+    NgbdDatepickerBasicComponent,
+    NgbdDropdownBasicComponent,
+    NgbdModalBasicComponent,
+    NgbdPopTooltipComponent,
+    NgbdratingBasicComponent,
+    NgbdtabsBasicComponent,
+    NgbdtimepickerBasicComponent,
+    NgbdtypeheadBasicComponent,
+    ButtonsComponent,
+    CardsComponent,
+    ToastComponent,
+    ToastsContainer,
+    NotifierComponent,
+    NgbdDatepickerLanguageComponent]
 })
 export class ComponentsModule {}
