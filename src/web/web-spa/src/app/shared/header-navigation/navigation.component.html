@@ -13,7 +13,7 @@
     <li class="nav-item mega-dropdown" ngbDropdown [autoClose]="false">
         <a ngbDropdownToggle class="nav-link waves-effect waves-dark" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
-            <span class="d-none d-md-block">Menu
+            <span class="d-none d-md-block">Services
                 <i class="fa fa-angle-down"></i>
             </span>
             <span class="d-block d-md-none">
@@ -22,84 +22,11 @@
         </a>
         <div class="dropdown-menu" ngbDropdownMenu>
             <div class="mega-dropdown-menu row">
-                <div class="col-lg-3 col-xlg-2 m-b-30">
-                    <h4 class="m-b-20">Devices</h4>
-                    <!-- CAROUSEL -->
-                    <ngb-carousel>
-                        <ng-template ngbSlide>
-                            <img src="assets/images/big/img1.jpg" class="img-fluid" alt="Random first slide">
-                        </ng-template>
-                        <ng-template ngbSlide>
-                            <img src="assets/images/big/img2.jpg" class="img-fluid" alt="Random second slide">
-                        </ng-template>
-                        <ng-template ngbSlide>
-                            <img src="assets/images/big/img3.jpg" class="img-fluid" alt="Random third slide">
-                        </ng-template>
-                    </ngb-carousel>
-                    <!-- End CAROUSEL -->
-                </div>
-                <div class="col-lg-3 m-b-30">
-                    <h4 class="m-b-20">Farms</h4>
-                    <!-- Accordian -->
-                    <ngb-accordion [closeOthers]="true" activeIds="static-1" class="accordion nav-accordion">
-                        <ngb-panel id="static-1" title="Ndlovukazi Farm">
-                            <ng-template ngbPanelContent>
-                                Farm Status: Excellent
-                            </ng-template>
-                        </ngb-panel>
-                        <ngb-panel id="static-2" title="Lesetla's Farm">
-                            <ng-template ngbPanelContent>
-                                Farm Status: Bad
-                            </ng-template>
-                        </ngb-panel>
-                       
-                        <ngb-panel id="static-3" title="Khoza's Farm">
-                            <ng-template ngbPanelContent>
-                                Farm Status: Good
-                            </ng-template>
-                        </ngb-panel>
-                       
-                    </ngb-accordion>
-                </div>
-                <div class="col-lg-3  m-b-30">
-                    <h4 class="m-b-20">CONTACT US</h4>
-                    <!-- Contact -->
-                    <form>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="exampleInputname1" placeholder="Enter Name"> </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Enter email"> </div>
-                        <div class="form-group">
-                            <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Message"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-info">Submit</button>
-                    </form>
-                </div>
-                <div class="col-lg-3 col-xlg-4 m-b-30">
-                    <h4 class="m-b-20">Recently Visited Pages</h4>
-                    <!-- List style -->
-                    <ul class="list-style-none">
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="fa fa-check text-success"></i>Crops</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="fa fa-check text-success"></i>Maps</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="fa fa-check text-success"></i>Tasks</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="fa fa-check text-success"></i>Devices</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="fa fa-check text-success"></i>Analytics</a>
-                        </li>
-                    </ul>
+                <div *ngFor="let item of menuItems" class="col-4">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><b>{{ item.name }}</b></li>
+                        <li *ngFor="let service of item.items" class="list-group-item"><a [routerLink]="service.page">{{service.name }}</a></li>
+                      </ul>
                 </div>
             </div>
         </div>

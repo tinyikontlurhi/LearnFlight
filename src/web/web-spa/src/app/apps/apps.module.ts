@@ -1,3 +1,4 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { ComponentsModule } from './../component/component.module';
 import { NgModule } from '@angular/core';
 import { CommonModule, DatePipe, DecimalPipe } from '@angular/common';
@@ -53,6 +54,7 @@ import { RulesComponent } from './devices/rules/rules.component';
 import { GroupsComponent } from './devices/groups/groups.component';
 import { DeviceComponent } from './devices/device/device.component';
 import { RuleConditionsComponent } from './devices/rule-conditions/rule-conditions.component';
+import { ManagmentConsoleComponent } from './managment-console/managment-console.component';
 
 @NgModule({
     imports: [
@@ -69,8 +71,7 @@ import { RuleConditionsComponent } from './devices/rule-conditions/rule-conditio
         RouterModule.forChild(AppsRoutes),
         PerfectScrollbarModule,
         Ng2SearchPipeModule,
-        DragDropModule,
-        ComponentsModule
+        DragDropModule
     ],
     declarations: [
         ChatComponent,
@@ -95,7 +96,8 @@ import { RuleConditionsComponent } from './devices/rule-conditions/rule-conditio
         RulesComponent,
         GroupsComponent,
         DeviceComponent,
-        RuleConditionsComponent
+        RuleConditionsComponent,
+        ManagmentConsoleComponent
     ],
     providers: [
         ContactService,

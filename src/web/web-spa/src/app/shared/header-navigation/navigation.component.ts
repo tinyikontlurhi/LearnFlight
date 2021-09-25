@@ -1,3 +1,4 @@
+import { MenuConfigService } from './../../core/services/menu-config.service';
 import { Component, AfterViewInit, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import {
@@ -19,9 +20,11 @@ export class NavigationComponent implements AfterViewInit {
   public showSearch = false;
   public email: string | null = '';
   public organizationName: string | null = '';
+  public menuItems: any;
 
   constructor(
     private modalService: NgbModal, 
+    private menuConfigService: MenuConfigService,
     // private translate: TranslateService,
     private router: Router) {
 
@@ -32,6 +35,9 @@ export class NavigationComponent implements AfterViewInit {
   ngOnInit() {
     this.email = sessionStorage.getItem('email');
     this.organizationName = sessionStorage.getItem('name');
+
+    this.menuItems = this.menuConfigService.portalMenuItems;
+    console.log(this.menuItems);
   }
 
   // This is for Notifications

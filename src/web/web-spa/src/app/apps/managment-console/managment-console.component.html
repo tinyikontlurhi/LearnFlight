@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-lg">
     <h1>Agricode Management Portal</h1>
     <div class="row">
         <div class="col-lg-8 col-md-8 col-sm-8">
@@ -7,9 +7,14 @@
                     <h6><b>Agricode Services</b></h6>
                 </div>
                 <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-info">Go somewhere</a>
+                    <div class="row">
+                        <div *ngFor="let item of menuItems" class="col-4">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><b>{{ item.name }}</b></li>
+                                <li *ngFor="let service of item.items" class="list-group-item"><a [routerLink]="service.page">{{service.name }}</a></li>
+                              </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="card">

@@ -1,3 +1,4 @@
+import { MenuConfigService } from './../../core/services/menu-config.service';
 import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { ROUTES } from './menu-items';
 import { RouteInfo } from './sidebar.metadata';
@@ -37,11 +38,16 @@ export class SidebarComponent implements OnInit {
   constructor(
     private modalService: NgbModal,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private menuConfigService: MenuConfigService
   ) { }
 
   // End open close
   ngOnInit() {
-    this.sidebarnavItems = ROUTES.filter(sidebarnavItem => sidebarnavItem);
+    this.menuConfigService.setSidebarNavItems(ROUTES.filter(sidebarnavItem => sidebarnavItem));
+
+    this.menuConfigService.sidebarnavItems.subscribe(data => {
+      this.sidebarnavItems = data;
+    });
   }
 }
