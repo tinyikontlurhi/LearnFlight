@@ -82,8 +82,7 @@ namespace api.gateway.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<IActionResult> PostOrganization(OrganizationDTO organization)
-        {
-            
+        { 
             var payload = await _organizationService.PostOrganization(organization);
             return Ok(payload);
         }

@@ -13,6 +13,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using service.organization.data;
+using service.organization.models;
+using service.organization.Repository;
+using service.organization.services;
 
 namespace service.organization
 {
@@ -28,6 +31,8 @@ namespace service.organization
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<ITokenService, TokenService>();
+
             // set the dbcontext to connect to the datatabase
             services.AddDbContext<DataContext>(options =>
             {
@@ -36,7 +41,10 @@ namespace service.organization
 
 
             // Add services used for dependency injection
-            
+            services.AddScoped<OrganizationService>();
+
+            // Configure Repository Wrapper service
+            // services.ConfigureRepositoryWrapper();
 
             // FIXME use the correct CORS policy
             services.AddCors(options => options.AddPolicy("MyPolicy", builder =>
@@ -76,5 +84,10 @@ namespace service.organization
                 endpoints.MapControllers();
             });
         }
+
+        //public static void ConfigureRepositoryWrapper(this IServiceCollection services)
+        //{
+        //    services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
+        //} 
     }
 }

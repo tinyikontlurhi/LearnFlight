@@ -21,11 +21,11 @@ export class PortalMenuConfig {
                     name: 'Crop Management',
                     items: [
                         {
-                            name: 'AmanziJo',
+                            name: 'Crop Gazer',
                             page: '/dashboard/classic'
                         },
                         {
-                            name: 'Irrigation Monitor',
+                            name: 'Yield Analyzer',
                             page: '/dashboard/classic'
                         }
                     ]
@@ -38,7 +38,7 @@ export class PortalMenuConfig {
                             page: '/dashboard/analytical'
                         },
                         {
-                            name: 'Irrigation Monitor',
+                            name: 'Device Monitor',
                             page: '/dashboard/analytical'
                         }
                     ]
@@ -66,10 +66,6 @@ export class PortalMenuConfig {
                         {
                             name: 'Agricode Budgets',
                             page: '/cost/bugets'
-                        },
-                        {
-                            name: 'Farmers Market',
-                            page: '/dashboard/ecommerce'
                         }
                     ]
                 }

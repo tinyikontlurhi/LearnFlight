@@ -1,30 +1,33 @@
 ﻿<Properties StartupConfiguration="{14C07465-D46D-4299-BFC9-9F135B1E7D6A}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="data/DataContext.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/OrganizationController.cs">
     <Files>
-      <File FileName="Startup.cs" Line="15" Column="33" />
-      <File FileName="data/DataContext.cs" Line="19" Column="2" />
-      <File FileName="models/Province.cs" Line="7" Column="1" />
+      <File FileName="Startup.cs" Line="44" Column="55" />
+      <File FileName="Controllers/AccountController.cs" Line="30" Column="37" />
+      <File FileName="Controllers/OrganizationController.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="service.organization" expanded="True">
             <Node name="service.organization" expanded="True">
-              <Node name="data" expanded="True">
-                <Node name="DataContext.cs" selected="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="OrganizationController.cs" selected="True" />
               </Node>
-              <Node name="Migrations" expanded="True" />
-              <Node name="models" expanded="True" />
             </Node>
           </Node>
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/Controllers/AccountController.cs" relfile="Controllers/AccountController.cs" line="29" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.service.organization PreferredExecutionTarget="/Applications/Google Chrome.app" />
