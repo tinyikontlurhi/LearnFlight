@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{14C07465-D46D-4299-BFC9-9F135B1E7D6A}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="data/DataContext.cs">
+    <Files>
+      <File FileName="Startup.cs" Line="15" Column="33" />
+      <File FileName="data/DataContext.cs" Line="19" Column="2" />
+      <File FileName="models/Province.cs" Line="7" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="service.organization" expanded="True">
+            <Node name="service.organization" expanded="True">
+              <Node name="data" expanded="True">
+                <Node name="DataContext.cs" selected="True" />
+              </Node>
+              <Node name="Migrations" expanded="True" />
+              <Node name="models" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.service.organization PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>
