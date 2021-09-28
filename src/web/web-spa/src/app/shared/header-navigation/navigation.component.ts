@@ -37,7 +37,6 @@ export class NavigationComponent implements AfterViewInit {
     this.organizationName = sessionStorage.getItem('name');
 
     this.menuItems = this.menuConfigService.portalMenuItems;
-    console.log(this.menuItems);
   }
 
   // This is for Notifications

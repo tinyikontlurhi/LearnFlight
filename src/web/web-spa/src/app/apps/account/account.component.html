@@ -1,0 +1,96 @@
+<div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Account Details</h4>
+                    <form [formGroup]="organizationForm" (ngSubmit)="onSubmit()">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" formControlName="id" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" formControlName="name" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" formControlName="email" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" formControlName="phone" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="form-actions">
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-info mr-2">Submit</button>
+                                <button  (click)="enableEdit()" class="btn btn-primary">Edit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Contact Information</h4>
+                    <form [formGroup]="organizationForm" (ngSubmit)="onSubmit()">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" formControlName="" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" formControlName="" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" formControlName="" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" formControlName="" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="form-actions">
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-info mr-2">Submit</button>
+                                <button  (click)="enableEdit()" class="btn btn-primary">Edit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Terminate Account</h4>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        
+</div>

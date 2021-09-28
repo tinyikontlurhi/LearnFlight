@@ -55,6 +55,7 @@ import { GroupsComponent } from './devices/groups/groups.component';
 import { DeviceComponent } from './devices/device/device.component';
 import { RuleConditionsComponent } from './devices/rule-conditions/rule-conditions.component';
 import { ManagmentConsoleComponent } from './managment-console/managment-console.component';
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
     imports: [
@@ -97,7 +98,8 @@ import { ManagmentConsoleComponent } from './managment-console/managment-console
         GroupsComponent,
         DeviceComponent,
         RuleConditionsComponent,
-        ManagmentConsoleComponent
+        ManagmentConsoleComponent,
+        AccountComponent
     ],
     providers: [
         ContactService,

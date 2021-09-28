@@ -166,7 +166,7 @@
                     <p class=" m-b-0">{{email}}</p>
                 </div>
             </div>
-            <a class="dropdown-item" href="javascript:void(0)">
+            <a class="dropdown-item" [routerLink]="['/apps/account']">
                 <i class="ti-user m-r-5 m-l-5"></i> Organization Account</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="javascript:void(0)">
@@ -175,9 +175,6 @@
             <a class="dropdown-item" (click)="logout()">
                 <i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
             <div class="dropdown-divider"></div>
-            <div class="p-l-30 p-10">
-                <a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">View Account</a>
-            </div>
         </div>
     </li>
     <!-- ============================================================== -->

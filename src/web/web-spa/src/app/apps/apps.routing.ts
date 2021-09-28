@@ -1,3 +1,4 @@
+import { AccountComponent } from './account/account.component';
 import { Routes } from '@angular/router';
 
 import { ChatComponent } from './chat/chat.component';
@@ -25,40 +26,13 @@ export const AppsRoutes: Routes = [
         path: '',
         children: [
             {
-                path: 'chat',
-                component: ChatComponent,
+                path: 'account',
+                component: AccountComponent,
                 data: {
-                    title: '',
+                    title: 'Account Management',
                     urls: [
-
-                    ]
-                }
-            },
-
-            {
-                path: 'mail/:type',
-                component: MailboxComponent,
-                children: [
-
-                    { path: ':id', component: DetailComponent },
-                    { path: '/compose', component: ComposeComponent }
-                ],
-                data: {
-                    title: '',
-                    urls: [
-
-                    ]
-                }
-            },
-
-            {
-                path: 'ticketlist',
-                component: TicketsComponent,
-                data: {
-                    title: 'Ticket List',
-                    urls: [
-                        { title: 'Dashboard', url: '/dashboard' },
-                        { title: 'Ticket List' }
+                        {title: 'Agricode Management Console', url: 'dashboard/portal'},
+                        {title: 'Account Manager'}
                     ]
                 }
             },
@@ -73,7 +47,6 @@ export const AppsRoutes: Routes = [
                     ]
                 }
             },
-            
             {
                 path: 'device-groups',
                 component: GroupsComponent,
@@ -108,79 +81,6 @@ export const AppsRoutes: Routes = [
                 }
             },
             {
-                path: 'ticketdetails',
-                component: TicketdetailsComponent,
-                data: {
-                    title: 'Ticket Details',
-                    urls: [
-                        { title: 'Dashboard', url: '/dashboard' },
-                        { title: 'Ticket Details' }
-                    ]
-                }
-            },
-            {
-                path: 'taskboard',
-                component: TaskboardComponent,
-                data: {
-                    title: 'Taskboard',
-                    urls: [
-                        { title: 'Dashboard', url: '/dashboard' },
-                        { title: 'Taskboard' }
-                    ]
-                }
-            },
-            {
-                path: 'fullcalendar',
-                component: FullcalendarComponent,
-                data: {
-                    title: 'Full-Calendar',
-                    urls: [
-                        { title: 'Dashboard', url: '/dashboard' },
-                        { title: 'Full-Calendar' }
-                    ]
-                }
-            },
-            {
-                path: 'todo',
-                component: TodosComponent,
-                data: {
-                    title: '',
-                    urls: [
-
-                    ]
-                }
-            },
-            {
-                path: 'tasks',
-                component: TasksComponent,
-                data: {
-                    title: '',
-                    urls: [
-
-                    ]
-                }
-            },
-            {
-                path: 'contact-list',
-                component: ContactListComponent,
-                data: {
-                    title: '',
-                    urls: [
-
-                    ]
-                }
-            },
-            {
-                path: 'notes',
-                component: NotesComponent,
-                data: {
-                    title: '',
-                    urls: [
-
-                    ]
-                }
-            },
-            {
                 path: 'users',
                 component: ListUsersComponent,
                 data: {
@@ -188,27 +88,6 @@ export const AppsRoutes: Routes = [
                     urls: [
                         { title: 'Dashboard', url: '/dashboard' },
                         { title: 'Users App' }
-                    ]
-                }
-            },
-            {
-                path: 'contact-grid',
-                component: ContactComponent,
-                data: {
-                    title: 'Contact Grid',
-                    urls: [
-                        { title: 'Dashboard', url: '/dashboard' },
-                        { title: 'Contact Grid' }
-                    ]
-                }
-            },
-            {
-                path: 'contact',
-                component: ContactsComponent,
-                data: {
-                    title: '',
-                    urls: [
-
                     ]
                 }
             }

@@ -156,3 +156,4 @@
 /Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/obj/Debug/net5.0/ref/service.organization.dll
 /Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/obj/Debug/net5.0/service.organization.pdb
 /Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/obj/Debug/net5.0/service.organization.genruntimeconfig.cache
+/Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/obj/Debug/net5.0/service.organization.csproj.AssemblyReference.cache
