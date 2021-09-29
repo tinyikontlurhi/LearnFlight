@@ -1,3 +1,4 @@
+import { NotifierModule } from 'angular-notifier';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -18,7 +19,8 @@ import { AuthenticationRoutes } from './authentication.routing';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(AuthenticationRoutes),
-    NgbModule
+    NgbModule,
+    NotifierModule
   ],
   declarations: [
     NotfoundComponent,

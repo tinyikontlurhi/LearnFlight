@@ -31,17 +31,20 @@ export class AccountComponent implements OnInit {
 
   ngOnInit() {
     this.menuConfigService.setSidebarNavItems(ROUTES.filter(sidebarnavItem => sidebarnavItem));
+    let id = parseInt(sessionStorage.getItem("accountID") || "");
 
-    // send request to retrieve organization results
-    this.organizationService.findOne(8).subscribe(data => {
-      this.organizationForm.patchValue({
-        id: data.id,
-        name: data.name,
-        email: data.email,
-        phone: data.phone,
-        address: data.address
-      })
-    });
+    if (id != null && id != undefined) {
+      // send request to retrieve organization results
+      this.organizationService.findOne(id).subscribe(data => {
+        this.organizationForm.patchValue({
+          id: data.id,
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          address: data.address
+        })
+      });
+    } 
   }
 
   /**

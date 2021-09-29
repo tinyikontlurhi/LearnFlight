@@ -16,4 +16,12 @@ export class OrganizationService {
   public findOne(id: number): Observable<IOrganization> {
     return this.http.get<IOrganization>(`${environment.url}organization/${id}`);
   }
+
+  /**
+   * POST: /api/organization
+   * @param organization contains organization details
+   */
+  public create(organization: IOrganization) {
+    return this.http.post<any>(`${environment.url}organization`, organization);
+  }
 }

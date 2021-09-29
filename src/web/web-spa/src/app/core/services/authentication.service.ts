@@ -17,7 +17,8 @@ export class AuthenticationService {
       map(organization => {
         // login is successful if there's a jwt in token response
         if (organization && organization.token) {
-          sessionStorage.setItem("name", organization.name)
+          sessionStorage.setItem("accountID", organization.id);
+          sessionStorage.setItem("name", organization.name);
           sessionStorage.setItem("email", loginDTO.email);
           sessionStorage.setItem("token", organization.token);
         }
