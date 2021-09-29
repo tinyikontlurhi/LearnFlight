@@ -48,6 +48,7 @@ namespace service.organization.services
 
                 return new PayloadDTO
                 {
+                    name = organization.name,
                     email = organization.email,
                     token = _tokenService.CreateToken(newOrganization)
                 };
