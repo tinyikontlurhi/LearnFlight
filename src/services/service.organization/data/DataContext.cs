@@ -15,5 +15,7 @@ namespace service.organization.data
         public DbSet<District> district { get; set; }
 
         public DbSet<Province> province { get; set; }
+
+        public DbSet<Invoice> invoice { get; set; }
     }
 }

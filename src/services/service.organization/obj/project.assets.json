@@ -9346,7 +9346,7 @@
       "outputPath": "/Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/thatolesetla/.config/NuGet/NuGet.Config"
+        "/Users/thatolesetla/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
