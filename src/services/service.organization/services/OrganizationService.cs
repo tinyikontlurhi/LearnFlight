@@ -90,6 +90,7 @@ namespace service.organization.services
 
             return new PayloadDTO
             {
+                id = organization.Id,
                 name = organization.name,
                 email = loginDTO.email,
                 token = _tokenService.CreateToken(organization)
