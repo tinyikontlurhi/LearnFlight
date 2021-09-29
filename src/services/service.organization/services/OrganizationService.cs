@@ -2,6 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using service.organization.data;
 using service.organization.dtos;
@@ -9,7 +10,7 @@ using service.organization.models;
 
 namespace service.organization.services
 {
-    public class OrganizationService
+    public class OrganizationService : ControllerBase
     {
         private readonly DataContext _context;
 
@@ -21,14 +22,14 @@ namespace service.organization.services
             _tokenService = tokenService;
         }
 
-        public async Task<PayloadDTO> PostOrganization(OrganizationDTO organization)
+        public async Task<IActionResult> PostOrganization(OrganizationDTO organization)
         {
 
             try
             {
                 if (await OrganizationExists(organization.email))
                 {
-                    return null;
+                    return BadRequest("Account already exists. Please use different details");
                 }
 
                 using var hmac = new HMACSHA512();
@@ -46,18 +47,16 @@ namespace service.organization.services
                 _context.organization.Add(newOrganization);
                 await _context.SaveChangesAsync();
 
-                return new PayloadDTO
-                {
-                    name = organization.name,
+                return Ok( new PayloadDTO {
                     email = organization.email,
                     token = _tokenService.CreateToken(newOrganization)
-                };
+                });
 
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
-                return null;
+                System.Console.WriteLine(ex.Message);
+                return StatusCode(500);
             }
         }
 

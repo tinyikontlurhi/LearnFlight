@@ -81,10 +81,10 @@ namespace service.organization.Controllers
         // POST: api/Organization
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Organization>> PostOrganization(OrganizationDTO organizationDTO)
+        public async Task<IActionResult> PostOrganization(OrganizationDTO organizationDTO)
         {
-            var payload = await _organizationService.PostOrganization(organizationDTO);
-            return Ok(payload);
+            return await _organizationService.PostOrganization(organizationDTO);
+
         }
 
         // DELETE: api/Organization/5

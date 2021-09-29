@@ -13,6 +13,7 @@ export class SignupComponent implements OnInit {
   organizationForm: any;
   isTermAccept = false;
   isProgress = false;           // variable holds the state of the progress spinner @see signup.component.html
+  error: any;
 
   constructor(
     private organizationService: OrganizationService,
@@ -44,8 +45,8 @@ export class SignupComponent implements OnInit {
       this.isProgress = false;
     }, error => {
       this.isProgress = false;
-      this.notifier.notify(`success`, `Something went wrong. Our team has been notified. If the problem persists, please contact Vidly Support. Error Code: 0xefe4532`);
-      console.error(error);
+      this.error = error.error;
+      console.error(error.error);
       // TODO integrate to ticket system to post issues when error occurs
     });
   }
