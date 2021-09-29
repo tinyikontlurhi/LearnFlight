@@ -21,5 +21,7 @@ namespace service.organization.data
         public DbSet<Billing> billing { get; set; }
 
         public DbSet<Account> account { get; set; }
+
+        public DbSet<Contact> contact { get; set; }
     }
 }

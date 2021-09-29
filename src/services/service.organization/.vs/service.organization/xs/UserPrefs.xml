@@ -1,8 +1,9 @@
 ﻿<Properties StartupConfiguration="{14C07465-D46D-4299-BFC9-9F135B1E7D6A}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="models/Account.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="models/Contact.cs">
     <Files>
       <File FileName="models/Account.cs" Line="14" Column="44" />
       <File FileName="data/DataContext.cs" Line="24" Column="6" />
+      <File FileName="models/Contact.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,7 +13,7 @@
               <Node name="Controllers" expanded="True" />
               <Node name="data" expanded="True" />
               <Node name="models" expanded="True">
-                <Node name="Account.cs" selected="True" />
+                <Node name="Contact.cs" selected="True" />
               </Node>
               <Node name="services" expanded="True" />
             </Node>
