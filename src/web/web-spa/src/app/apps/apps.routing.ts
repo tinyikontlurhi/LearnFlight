@@ -1,3 +1,4 @@
+import { CreditsComponent } from './account/credits/credits.component';
 import { AccountComponent } from './account/account.component';
 import { Routes } from '@angular/router';
 
@@ -88,6 +89,18 @@ export const AppsRoutes: Routes = [
                     urls: [
                         { title: 'Dashboard', url: '/dashboard' },
                         { title: 'Users App' }
+                    ]
+                }
+            },
+            {
+                path: 'account/credits',
+                component: CreditsComponent,
+                data: {
+                    titile: 'Credits',
+                    urls: [
+                        { title: 'Dashboard', url: '/console' },
+                        { title: 'Account', url: '/apps/account'},
+                        { title: 'Credits'}
                     ]
                 }
             }

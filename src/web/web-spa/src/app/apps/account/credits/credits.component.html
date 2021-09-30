@@ -1,0 +1,65 @@
+<div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title mb-0"><span class="lstick"></span>Summary </h4>
+            <br>
+                <table class="table table-striped border">
+                    <thead>
+                        <tr>
+                            <th>Total Amount Remaining</th>
+                            <th>Total Amount Used</th>
+                            <th>Active Credits</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+     
+                            </td>
+                            <td>
+     
+                            </td>
+                            <td>
+     
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title mb-0"><span class="lstick"></span>Credits </h4>
+            <span class="card-subtitle">Credits are a free amount a organization recieves from Agricode to explore services</span>
+            
+                <div class="form-group form-inline mt-3">
+                    Find Credits: <input  class="form-control ml-2" placeholder="Search" type="text" [(ngModel)]="searchTerm" />
+                </div>
+            
+            <table class="table table-striped border">
+                <thead>
+                    <tr>
+                        <th>Expiration Date</th>
+                        <th>Credit Name</th>
+                        <th>Amount Used</th>
+                        <th>Amount Remaining</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let credit of filterCredits">
+                        <td>{{ credit.expirationDate }}</td>
+                        <td>
+                            {{ credit.creditName }}
+                        </td>
+                        <td>
+                            {{ credit.amountUsed}}
+                        </td>
+                        <td>
+                            {{ credit.amountRemaining }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

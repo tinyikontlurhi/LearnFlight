@@ -128,7 +128,7 @@
                 <li>
                     <div class="message-center message-body" [perfectScrollbar]="config">
                         <!-- Message -->
-                        <a href="javascript:void(0)" class="message-item" *ngFor="let helper of help">
+                        <a [routerLink]="helper.page" class="message-item" *ngFor="let helper of help">
                             {{helper.name}}
                         </a>
                     </div>
