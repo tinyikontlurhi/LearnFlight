@@ -106,7 +106,7 @@ export class NavigationComponent implements AfterViewInit {
   help: Object = [
     {
       name: 'Get Started',
-      page: 'get started'
+      page: '/starter'
     },
     {
       name: 'Documentation',

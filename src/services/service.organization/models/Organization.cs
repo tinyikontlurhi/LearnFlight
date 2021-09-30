@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace service.organization.models
 {
     public class Organization
     {
+
         public int Id { get; set; }
 
         public string name { get; set; }
@@ -20,5 +22,13 @@ namespace service.organization.models
         public byte[] passwordSalt { get; set; }
 
         public DateTime lastLogin { get; set; }
+
+        public ICollection<Invoice> invoices { get; set; }
+
+        public ICollection<Account> accounts { get; set; }
+
+        public ICollection<Contact> contacts { get; set; }
+
+        public ICollection<Credits> credits { get; set; }
     }
 }

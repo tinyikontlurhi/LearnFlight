@@ -13,7 +13,7 @@ export class AuthenticationService {
 
   public login(loginDTO: ILoginDTO) {
 
-    return this.http.post<any>(`${environment.url}account/login`, loginDTO).pipe(
+    return this.http.post<any>(`${environment.url}authentication/login`, loginDTO).pipe(
       map(organization => {
         // login is successful if there's a jwt in token response
         if (organization && organization.token) {

@@ -12,47 +12,47 @@ namespace service.organization.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AccountController : ControllerBase
+    public class CreditsController : ControllerBase
     {
         private readonly DataContext _context;
 
-        public AccountController(DataContext context)
+        public CreditsController(DataContext context)
         {
             _context = context;
         }
 
-        // GET: api/Account
+        // GET: api/Credits
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Account>>> Getaccount()
+        public async Task<ActionResult<IEnumerable<Credits>>> Getcredits()
         {
-            return await _context.account.ToListAsync();
+            return await _context.credits.ToListAsync();
         }
 
-        // GET: api/Account/5
+        // GET: api/Credits/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Account>> GetAccount(int id)
+        public async Task<ActionResult<Credits>> GetCredits(int id)
         {
-            var account = await _context.account.FindAsync(id);
+            var credits = await _context.credits.FindAsync(id);
 
-            if (account == null)
+            if (credits == null)
             {
                 return NotFound();
             }
 
-            return account;
+            return credits;
         }
 
-        // PUT: api/Account/5
+        // PUT: api/Credits/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAccount(int id, Account account)
+        public async Task<IActionResult> PutCredits(int id, Credits credits)
         {
-            if (id != account.Id)
+            if (id != credits.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(account).State = EntityState.Modified;
+            _context.Entry(credits).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace service.organization.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AccountExists(id))
+                if (!CreditsExists(id))
                 {
                     return NotFound();
                 }
@@ -73,36 +73,36 @@ namespace service.organization.Controllers
             return NoContent();
         }
 
-        // POST: api/Account
+        // POST: api/Credits
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Account>> PostAccount(Account account)
+        public async Task<ActionResult<Credits>> PostCredits(Credits credits)
         {
-            _context.account.Add(account);
+            _context.credits.Add(credits);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetAccount", new { id = account.Id }, account);
+            return CreatedAtAction("GetCredits", new { id = credits.Id }, credits);
         }
 
-        // DELETE: api/Account/5
+        // DELETE: api/Credits/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAccount(int id)
+        public async Task<IActionResult> DeleteCredits(int id)
         {
-            var account = await _context.account.FindAsync(id);
-            if (account == null)
+            var credits = await _context.credits.FindAsync(id);
+            if (credits == null)
             {
                 return NotFound();
             }
 
-            _context.account.Remove(account);
+            _context.credits.Remove(credits);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool AccountExists(int id)
+        private bool CreditsExists(int id)
         {
-            return _context.account.Any(e => e.Id == id);
+            return _context.credits.Any(e => e.Id == id);
         }
     }
 }

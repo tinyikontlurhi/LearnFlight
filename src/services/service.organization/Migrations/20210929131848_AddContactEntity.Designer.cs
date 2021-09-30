@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using service.organization.data;
@@ -9,9 +10,10 @@ using service.organization.data;
 namespace service.organization.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20210929131848_AddContactEntity")]
+    partial class AddContactEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -113,35 +115,6 @@ namespace service.organization.Migrations
                     b.HasIndex("organizationId");
 
                     b.ToTable("contact");
-                });
-
-            modelBuilder.Entity("service.organization.models.Credits", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<double>("amountRemaining")
-                        .HasColumnType("double precision");
-
-                    b.Property<double>("amountUsed")
-                        .HasColumnType("double precision");
-
-                    b.Property<string>("creditName")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("expirationDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<int?>("organizationId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("organizationId");
-
-                    b.ToTable("credits");
                 });
 
             modelBuilder.Entity("service.organization.models.District", b =>
@@ -272,7 +245,7 @@ namespace service.organization.Migrations
             modelBuilder.Entity("service.organization.models.Account", b =>
                 {
                     b.HasOne("service.organization.models.Organization", "organization")
-                        .WithMany("accounts")
+                        .WithMany()
                         .HasForeignKey("organizationId");
 
                     b.Navigation("organization");
@@ -290,15 +263,6 @@ namespace service.organization.Migrations
             modelBuilder.Entity("service.organization.models.Contact", b =>
                 {
                     b.HasOne("service.organization.models.Organization", "organization")
-                        .WithMany("contacts")
-                        .HasForeignKey("organizationId");
-
-                    b.Navigation("organization");
-                });
-
-            modelBuilder.Entity("service.organization.models.Credits", b =>
-                {
-                    b.HasOne("service.organization.models.Organization", "organization")
                         .WithMany()
                         .HasForeignKey("organizationId");
 
@@ -308,19 +272,10 @@ namespace service.organization.Migrations
             modelBuilder.Entity("service.organization.models.Invoice", b =>
                 {
                     b.HasOne("service.organization.models.Organization", "organization")
-                        .WithMany("invoices")
+                        .WithMany()
                         .HasForeignKey("organizationId");
 
                     b.Navigation("organization");
-                });
-
-            modelBuilder.Entity("service.organization.models.Organization", b =>
-                {
-                    b.Navigation("accounts");
-
-                    b.Navigation("contacts");
-
-                    b.Navigation("invoices");
                 });
 #pragma warning restore 612, 618
         }

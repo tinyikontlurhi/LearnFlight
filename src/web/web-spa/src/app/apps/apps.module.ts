@@ -56,6 +56,7 @@ import { DeviceComponent } from './devices/device/device.component';
 import { RuleConditionsComponent } from './devices/rule-conditions/rule-conditions.component';
 import { ManagmentConsoleComponent } from './managment-console/managment-console.component';
 import { AccountComponent } from './account/account.component';
+import { CreditsComponent } from './account/credits/credits.component';
 
 @NgModule({
     imports: [
@@ -99,7 +100,8 @@ import { AccountComponent } from './account/account.component';
         DeviceComponent,
         RuleConditionsComponent,
         ManagmentConsoleComponent,
-        AccountComponent
+        AccountComponent,
+        CreditsComponent
     ],
     providers: [
         ContactService,

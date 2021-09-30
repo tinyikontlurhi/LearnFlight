@@ -24,4 +24,14 @@ export class OrganizationService {
   public create(organization: IOrganization) {
     return this.http.post<any>(`${environment.url}organization`, organization);
   }
+
+
+
+  /**
+   * Credits
+   */
+
+   public findAllCredits() {
+     return this.http.get<any>(`${environment.url}credits`);
+   }
 }

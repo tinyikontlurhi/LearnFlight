@@ -12,47 +12,47 @@ namespace service.organization.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AccountController : ControllerBase
+    public class BillingController : ControllerBase
     {
         private readonly DataContext _context;
 
-        public AccountController(DataContext context)
+        public BillingController(DataContext context)
         {
             _context = context;
         }
 
-        // GET: api/Account
+        // GET: api/Billing
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Account>>> Getaccount()
+        public async Task<ActionResult<IEnumerable<Billing>>> Getbilling()
         {
-            return await _context.account.ToListAsync();
+            return await _context.billing.ToListAsync();
         }
 
-        // GET: api/Account/5
+        // GET: api/Billing/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Account>> GetAccount(int id)
+        public async Task<ActionResult<Billing>> GetBilling(int id)
         {
-            var account = await _context.account.FindAsync(id);
+            var billing = await _context.billing.FindAsync(id);
 
-            if (account == null)
+            if (billing == null)
             {
                 return NotFound();
             }
 
-            return account;
+            return billing;
         }
 
-        // PUT: api/Account/5
+        // PUT: api/Billing/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAccount(int id, Account account)
+        public async Task<IActionResult> PutBilling(int id, Billing billing)
         {
-            if (id != account.Id)
+            if (id != billing.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(account).State = EntityState.Modified;
+            _context.Entry(billing).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace service.organization.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AccountExists(id))
+                if (!BillingExists(id))
                 {
                     return NotFound();
                 }
@@ -73,36 +73,36 @@ namespace service.organization.Controllers
             return NoContent();
         }
 
-        // POST: api/Account
+        // POST: api/Billing
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Account>> PostAccount(Account account)
+        public async Task<ActionResult<Billing>> PostBilling(Billing billing)
         {
-            _context.account.Add(account);
+            _context.billing.Add(billing);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetAccount", new { id = account.Id }, account);
+            return CreatedAtAction("GetBilling", new { id = billing.Id }, billing);
         }
 
-        // DELETE: api/Account/5
+        // DELETE: api/Billing/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAccount(int id)
+        public async Task<IActionResult> DeleteBilling(int id)
         {
-            var account = await _context.account.FindAsync(id);
-            if (account == null)
+            var billing = await _context.billing.FindAsync(id);
+            if (billing == null)
             {
                 return NotFound();
             }
 
-            _context.account.Remove(account);
+            _context.billing.Remove(billing);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool AccountExists(int id)
+        private bool BillingExists(int id)
         {
-            return _context.account.Any(e => e.Id == id);
+            return _context.billing.Any(e => e.Id == id);
         }
     }
 }

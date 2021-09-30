@@ -12,47 +12,47 @@ namespace service.organization.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AccountController : ControllerBase
+    public class InvoiceController : ControllerBase
     {
         private readonly DataContext _context;
 
-        public AccountController(DataContext context)
+        public InvoiceController(DataContext context)
         {
             _context = context;
         }
 
-        // GET: api/Account
+        // GET: api/Invoice
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Account>>> Getaccount()
+        public async Task<ActionResult<IEnumerable<Invoice>>> Getinvoice()
         {
-            return await _context.account.ToListAsync();
+            return await _context.invoice.ToListAsync();
         }
 
-        // GET: api/Account/5
+        // GET: api/Invoice/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Account>> GetAccount(int id)
+        public async Task<ActionResult<Invoice>> GetInvoice(int id)
         {
-            var account = await _context.account.FindAsync(id);
+            var invoice = await _context.invoice.FindAsync(id);
 
-            if (account == null)
+            if (invoice == null)
             {
                 return NotFound();
             }
 
-            return account;
+            return invoice;
         }
 
-        // PUT: api/Account/5
+        // PUT: api/Invoice/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAccount(int id, Account account)
+        public async Task<IActionResult> PutInvoice(int id, Invoice invoice)
         {
-            if (id != account.Id)
+            if (id != invoice.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(account).State = EntityState.Modified;
+            _context.Entry(invoice).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace service.organization.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AccountExists(id))
+                if (!InvoiceExists(id))
                 {
                     return NotFound();
                 }
@@ -73,36 +73,36 @@ namespace service.organization.Controllers
             return NoContent();
         }
 
-        // POST: api/Account
+        // POST: api/Invoice
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Account>> PostAccount(Account account)
+        public async Task<ActionResult<Invoice>> PostInvoice(Invoice invoice)
         {
-            _context.account.Add(account);
+            _context.invoice.Add(invoice);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetAccount", new { id = account.Id }, account);
+            return CreatedAtAction("GetInvoice", new { id = invoice.Id }, invoice);
         }
 
-        // DELETE: api/Account/5
+        // DELETE: api/Invoice/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAccount(int id)
+        public async Task<IActionResult> DeleteInvoice(int id)
         {
-            var account = await _context.account.FindAsync(id);
-            if (account == null)
+            var invoice = await _context.invoice.FindAsync(id);
+            if (invoice == null)
             {
                 return NotFound();
             }
 
-            _context.account.Remove(account);
+            _context.invoice.Remove(invoice);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool AccountExists(int id)
+        private bool InvoiceExists(int id)
         {
-            return _context.account.Any(e => e.Id == id);
+            return _context.invoice.Any(e => e.Id == id);
         }
     }
 }

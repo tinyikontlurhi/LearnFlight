@@ -18,7 +18,7 @@ export const ROUTES: RouteInfo[] = [
         submenu: []
     },
     {
-        path: '',
+        path: 'apps/account/credits',
         title: 'Credits',
         icon: '',
         class: '',

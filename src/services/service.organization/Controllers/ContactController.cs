@@ -12,47 +12,47 @@ namespace service.organization.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AccountController : ControllerBase
+    public class ContactController : ControllerBase
     {
         private readonly DataContext _context;
 
-        public AccountController(DataContext context)
+        public ContactController(DataContext context)
         {
             _context = context;
         }
 
-        // GET: api/Account
+        // GET: api/Contact
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Account>>> Getaccount()
+        public async Task<ActionResult<IEnumerable<Contact>>> Getcontact()
         {
-            return await _context.account.ToListAsync();
+            return await _context.contact.ToListAsync();
         }
 
-        // GET: api/Account/5
+        // GET: api/Contact/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Account>> GetAccount(int id)
+        public async Task<ActionResult<Contact>> GetContact(int id)
         {
-            var account = await _context.account.FindAsync(id);
+            var contact = await _context.contact.FindAsync(id);
 
-            if (account == null)
+            if (contact == null)
             {
                 return NotFound();
             }
 
-            return account;
+            return contact;
         }
 
-        // PUT: api/Account/5
+        // PUT: api/Contact/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAccount(int id, Account account)
+        public async Task<IActionResult> PutContact(int id, Contact contact)
         {
-            if (id != account.Id)
+            if (id != contact.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(account).State = EntityState.Modified;
+            _context.Entry(contact).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace service.organization.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AccountExists(id))
+                if (!ContactExists(id))
                 {
                     return NotFound();
                 }
@@ -73,36 +73,36 @@ namespace service.organization.Controllers
             return NoContent();
         }
 
-        // POST: api/Account
+        // POST: api/Contact
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Account>> PostAccount(Account account)
+        public async Task<ActionResult<Contact>> PostContact(Contact contact)
         {
-            _context.account.Add(account);
+            _context.contact.Add(contact);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetAccount", new { id = account.Id }, account);
+            return CreatedAtAction("GetContact", new { id = contact.Id }, contact);
         }
 
-        // DELETE: api/Account/5
+        // DELETE: api/Contact/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAccount(int id)
+        public async Task<IActionResult> DeleteContact(int id)
         {
-            var account = await _context.account.FindAsync(id);
-            if (account == null)
+            var contact = await _context.contact.FindAsync(id);
+            if (contact == null)
             {
                 return NotFound();
             }
 
-            _context.account.Remove(account);
+            _context.contact.Remove(contact);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool AccountExists(int id)
+        private bool ContactExists(int id)
         {
-            return _context.account.Any(e => e.Id == id);
+            return _context.contact.Any(e => e.Id == id);
         }
     }
 }

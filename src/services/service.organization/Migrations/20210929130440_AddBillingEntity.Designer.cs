@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using service.organization.data;
@@ -9,47 +10,16 @@ using service.organization.data;
 namespace service.organization.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20210929130440_AddBillingEntity")]
+    partial class AddBillingEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 63)
                 .HasAnnotation("ProductVersion", "5.0.8")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-            modelBuilder.Entity("service.organization.models.Account", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<string>("cardName")
-                        .HasColumnType("text");
-
-                    b.Property<byte[]>("cardNumberHash")
-                        .HasColumnType("bytea");
-
-                    b.Property<byte[]>("cardNumberSalt")
-                        .HasColumnType("bytea");
-
-                    b.Property<string>("expires")
-                        .HasColumnType("text");
-
-                    b.Property<bool>("isActive")
-                        .HasColumnType("boolean");
-
-                    b.Property<int?>("organizationId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("organizationId");
-
-                    b.ToTable("account");
-                });
 
             modelBuilder.Entity("service.organization.models.Billing", b =>
                 {
@@ -75,73 +45,6 @@ namespace service.organization.Migrations
                     b.HasIndex("invoiceId");
 
                     b.ToTable("billing");
-                });
-
-            modelBuilder.Entity("service.organization.models.Contact", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<string>("address")
-                        .HasColumnType("text");
-
-                    b.Property<string>("companyName")
-                        .HasColumnType("text");
-
-                    b.Property<string>("country")
-                        .HasColumnType("text");
-
-                    b.Property<string>("email")
-                        .HasColumnType("text");
-
-                    b.Property<string>("firstName")
-                        .HasColumnType("text");
-
-                    b.Property<int?>("organizationId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("phone")
-                        .HasColumnType("text");
-
-                    b.Property<string>("province")
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("organizationId");
-
-                    b.ToTable("contact");
-                });
-
-            modelBuilder.Entity("service.organization.models.Credits", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<double>("amountRemaining")
-                        .HasColumnType("double precision");
-
-                    b.Property<double>("amountUsed")
-                        .HasColumnType("double precision");
-
-                    b.Property<string>("creditName")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("expirationDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<int?>("organizationId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("organizationId");
-
-                    b.ToTable("credits");
                 });
 
             modelBuilder.Entity("service.organization.models.District", b =>
@@ -269,15 +172,6 @@ namespace service.organization.Migrations
                     b.ToTable("province");
                 });
 
-            modelBuilder.Entity("service.organization.models.Account", b =>
-                {
-                    b.HasOne("service.organization.models.Organization", "organization")
-                        .WithMany("accounts")
-                        .HasForeignKey("organizationId");
-
-                    b.Navigation("organization");
-                });
-
             modelBuilder.Entity("service.organization.models.Billing", b =>
                 {
                     b.HasOne("service.organization.models.Invoice", "invoice")
@@ -287,40 +181,13 @@ namespace service.organization.Migrations
                     b.Navigation("invoice");
                 });
 
-            modelBuilder.Entity("service.organization.models.Contact", b =>
-                {
-                    b.HasOne("service.organization.models.Organization", "organization")
-                        .WithMany("contacts")
-                        .HasForeignKey("organizationId");
-
-                    b.Navigation("organization");
-                });
-
-            modelBuilder.Entity("service.organization.models.Credits", b =>
+            modelBuilder.Entity("service.organization.models.Invoice", b =>
                 {
                     b.HasOne("service.organization.models.Organization", "organization")
                         .WithMany()
                         .HasForeignKey("organizationId");
 
                     b.Navigation("organization");
-                });
-
-            modelBuilder.Entity("service.organization.models.Invoice", b =>
-                {
-                    b.HasOne("service.organization.models.Organization", "organization")
-                        .WithMany("invoices")
-                        .HasForeignKey("organizationId");
-
-                    b.Navigation("organization");
-                });
-
-            modelBuilder.Entity("service.organization.models.Organization", b =>
-                {
-                    b.Navigation("accounts");
-
-                    b.Navigation("contacts");
-
-                    b.Navigation("invoices");
                 });
 #pragma warning restore 612, 618
         }
