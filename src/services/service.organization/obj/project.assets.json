@@ -9424,19 +9424,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/thatolesetla/.nuget/packages/": {}
+    "/Users/tinyikontlurhi/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/service.organization.csproj",
+      "projectUniqueName": "/Users/tinyikontlurhi/agricodeApp/agricode/src/services/service.organization/service.organization.csproj",
       "projectName": "service.organization",
-      "projectPath": "/Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/service.organization.csproj",
-      "packagesPath": "/Users/thatolesetla/.nuget/packages/",
-      "outputPath": "/Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/obj/",
+      "projectPath": "/Users/tinyikontlurhi/agricodeApp/agricode/src/services/service.organization/service.organization.csproj",
+      "packagesPath": "/Users/tinyikontlurhi/.nuget/packages/",
+      "outputPath": "/Users/tinyikontlurhi/agricodeApp/agricode/src/services/service.organization/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/thatolesetla/.config/NuGet/NuGet.Config"
+        "/Users/tinyikontlurhi/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
