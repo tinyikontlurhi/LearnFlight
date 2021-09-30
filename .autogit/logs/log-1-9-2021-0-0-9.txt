@@ -1,0 +1,28 @@
+-------------------- Auto-Git Log --------------------
+		Fri Oct 01 2021 00:00:09 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/services/service.organization/obj/Debug/net5.0/ref/service.organization.dll
+* src/services/service.organization/obj/Debug/net5.0/service.organization.AssemblyInfo.cs
+* src/services/service.organization/obj/Debug/net5.0/service.organization.GeneratedMSBuildEditorConfig.editorconfig
+* src/services/service.organization/obj/Debug/net5.0/service.organization.MvcApplicationPartsAssemblyInfo.cs
+* src/services/service.organization/obj/Debug/net5.0/service.organization.assets.cache
+* src/services/service.organization/obj/Debug/net5.0/service.organization.csproj.CoreCompileInputs.cache
+* src/services/service.organization/obj/Debug/net5.0/service.organization.dll
+* src/services/service.organization/obj/Debug/net5.0/service.organization.pdb
+* src/services/service.organization/obj/project.assets.json
+* src/services/service.organization/obj/project.nuget.cache
+* src/services/service.organization/obj/service.organization.csproj.nuget.dgspec.json
+* src/services/service.organization/obj/service.organization.csproj.nuget.g.props
+
+
+Created files:
+* .autogit/autogit.json
+* src/services/service.organization/obj/Debug/net5.0/service.organization.csproj.AssemblyReference.cache
+
+
+Deleted files:
+
+
+Renamed files:
