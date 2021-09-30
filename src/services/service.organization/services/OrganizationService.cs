@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,6 +35,19 @@ namespace service.organization.services
 
                 using var hmac = new HMACSHA512();
 
+                // Assign welcome credits to newly created organization
+                var welcomeCredits = new Credits
+                {
+                    expirationDate = DateTime.Now.AddMonths(2),
+                    creditName = CreditConfig.WELCOME_CREDITS,
+                    amountUsed = 0,
+                    amountRemaining = 500
+                };
+
+                // Add the list of credits to organization
+                ICollection<Credits> credits = new List<Credits>();
+                credits.Add(welcomeCredits);
+
                 var newOrganization = new Organization
                 {
                     name = organization.name,
@@ -41,7 +55,8 @@ namespace service.organization.services
                     phone = organization.phone,
                     address = organization.address,
                     passwordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(organization.password)),
-                    passwordSalt = hmac.Key
+                    passwordSalt = hmac.Key,
+                    credits = credits
                 };
 
                 _context.organization.Add(newOrganization);

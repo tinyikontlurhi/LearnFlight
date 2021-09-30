@@ -14,7 +14,7 @@
         "outputPath": "/Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/thatolesetla/.nuget/NuGet/NuGet.Config"
+          "/Users/thatolesetla/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -38,6 +38,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.8, )"

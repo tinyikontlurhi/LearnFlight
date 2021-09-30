@@ -7,6 +7,8 @@
 /Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/bin/Debug/net5.0/ref/service.organization.dll
 /Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/bin/Debug/net5.0/service.organization.pdb
 /Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/bin/Debug/net5.0/Humanizer.dll
+/Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/bin/Debug/net5.0/Microsoft.AspNetCore.JsonPatch.dll
+/Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/bin/Debug/net5.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 /Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/bin/Debug/net5.0/Microsoft.AspNetCore.Razor.Language.dll
 /Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/bin/Debug/net5.0/Microsoft.Bcl.AsyncInterfaces.dll
 /Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/bin/Debug/net5.0/Microsoft.CodeAnalysis.dll
@@ -42,6 +44,7 @@
 /Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 /Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/bin/Debug/net5.0/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 /Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/bin/Debug/net5.0/Newtonsoft.Json.dll
+/Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/bin/Debug/net5.0/Newtonsoft.Json.Bson.dll
 /Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/bin/Debug/net5.0/Npgsql.dll
 /Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/bin/Debug/net5.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
 /Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/bin/Debug/net5.0/Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll
@@ -156,4 +159,3 @@
 /Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/obj/Debug/net5.0/ref/service.organization.dll
 /Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/obj/Debug/net5.0/service.organization.pdb
 /Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/obj/Debug/net5.0/service.organization.genruntimeconfig.cache
-/Users/thatolesetla/Documents/VidlyIT/AgriCode/System/src/services/service.organization/obj/Debug/net5.0/service.organization.csproj.AssemblyReference.cache

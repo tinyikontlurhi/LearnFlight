@@ -23,5 +23,7 @@ namespace service.organization.data
         public DbSet<Account> account { get; set; }
 
         public DbSet<Contact> contact { get; set; }
+
+        public DbSet<Credits> credits { get; set; }
     }
 }
