@@ -1,0 +1,24 @@
+-------------------- Auto-Git Log --------------------
+		Fri Oct 01 2021 00:31:28 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/services/service.organization/appsettings.json
+* src/services/service.organization/bin/Debug/net5.0/appsettings.json
+* src/services/service.organization/bin/Debug/net5.0/ref/service.organization.dll
+* src/services/service.organization/bin/Debug/net5.0/service.organization.deps.json
+* src/services/service.organization/bin/Debug/net5.0/service.organization.dll
+* src/services/service.organization/bin/Debug/net5.0/service.organization.pdb
+* src/services/service.organization/bin/Debug/net5.0/service.organization.runtimeconfig.dev.json
+* src/services/service.organization/obj/Debug/net5.0/service.organization.csproj.FileListAbsolute.txt
+* src/services/service.organization/obj/Debug/net5.0/service.organization.genruntimeconfig.cache
+
+
+Created files:
+* .autogit/logs/log-1-9-2021-0-0-9.txt
+
+
+Deleted files:
+
+
+Renamed files:
